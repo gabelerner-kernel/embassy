@@ -8,6 +8,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <!-- next-header -->
 ## Unreleased - ReleaseDate
 
+- added: System OFF support for the nRF54L series.
+- bugfix: usb: don't re-arm OUT endpoints twice per packet, which could silently drop received packets under load.
+
+## 0.11.0 - 2026-06-16
+
+- added: support for the SQSPI peripheral for nRF54.
+- added: support for the nRF54 VPR coprocessor, including loading and running programs and issuing bare opcodes
+- added: USB support for nRF54LM20A (via embassy-usb-synopsys-otg)
+- added: `nfc-pins-as-gpio` support for nrf54
+- added: support for rand-core 0.10
+- bugfix: fix cracen on nRF54LM20A
+- bugfix: nrf91: fix erratum 36
+- bugfix: fix GRTC time driver for nRF54L/LM series
+- bugfix: fix GRTC syscounter reset on init and select the last GRTC CC channel
+- bugfix: nrf54: provide explicit timer Capture/Compare channel numbers
+- bugfix: pwm: put pins into high-z on drop
+- changed: update nrf-pac
+
 ## 0.10.0 - 2026-03-10
 
 - bugfix: avoid hang if calling now() before syscounter is enabled on nrf54
